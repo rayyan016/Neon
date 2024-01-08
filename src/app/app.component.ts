@@ -12,7 +12,7 @@ import { WishItem } from '../shared/models/wishItems';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  items = [
+  items : WishItem[] = [
     new WishItem("Learn Angular"),
     new WishItem("Learn React", true),
     new WishItem("Find a senzu bean"),
