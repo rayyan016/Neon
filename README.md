@@ -1,27 +1,37 @@
-# Wishlist
+# Angular Wishlist
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+This project is created with the purpose of learning Angular. It is a simple wishlist application where users can add and manage their wishlist items.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+To run the app locally, follow these steps:
 
-## Code scaffolding
+1. Clone the repository:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+   ```bash
+   git clone https://github.com/rayyan016/Neon.git
+   ```
 
-## Build
+2. Navigate to the project directory:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   ```bash
+   cd Neon
+   ```
 
-## Running unit tests
+3. Install the dependencies:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```bash
+   yarn install
+   ```
 
-## Running end-to-end tests
+4. Start the development server:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   ng serve
+   ```
 
-## Further help
+5. Open your browser and visit `http://localhost:4200` to view the app.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Usage
+
+Once the app is running, you can start adding items to your wishlist. Use the provided interface to add, edit, and delete wishlist items. Enjoy exploring Angular while managing your wishlist!
