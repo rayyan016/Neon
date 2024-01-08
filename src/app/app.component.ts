@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
+import { WishItem } from '../shared/models/wishItems';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -10,5 +12,10 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  items = [
+    new WishItem("Learn Angular"),
+    new WishItem("Learn React", true),
+    new WishItem("Find a senzu bean"),
+  ]
   title = 'wishlist';
 }
