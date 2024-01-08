@@ -9,13 +9,18 @@ import { WishItem } from '../shared/models/wishItems';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  items : WishItem[] = [
-    new WishItem("Learn Angular"),
-    new WishItem("Learn React", true),
-    new WishItem("Find a senzu bean"),
-  ]
+  items: WishItem[] = [
+    new WishItem('Learn Angular'),
+    new WishItem('Learn React', true),
+    new WishItem('Find a senzu bean'),
+  ];
   title = 'wishlist';
+
+  toggleItem(item: WishItem) {
+    item.isComplete = !item.isComplete;
+    console.log(item);
+  }
 }

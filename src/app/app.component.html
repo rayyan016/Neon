@@ -1,14 +1,15 @@
-<div class="text-emerald-600">
+<div class="text-emerald-600 grid place-content-center">
   <div *ngIf="items.length === 0; else showItems">
     No wishes to display
   </div>
 
   <ng-template #showItems>
     <ul>
-      <li *ngFor="let item of items">
+      <li *ngFor="let item of items; index as ii">
         <div>
           <label for="">
-            <input type="checkbox" name="" id=""> {{item.wishText}}
+            <input type="checkbox" name="" id="" [checked]="item.isComplete" [attr.data-index]="ii"
+              (click)="toggleItem(item)"> {{item.wishText}}
           </label>
         </div>
       </li>
