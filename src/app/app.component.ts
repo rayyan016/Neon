@@ -23,8 +23,8 @@ export class AppComponent {
   title = 'wishlist';
 
   addNewWish() {
-    // Add wish to items array
-    // Clear input field
+    this.items.push(new WishItem(this.newWishText));
+    this.newWishText = '';
   }
 
   toggleItem(item: WishItem) {
