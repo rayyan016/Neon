@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 import { WishItem } from '../shared/models/wishItems';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -17,7 +18,14 @@ export class AppComponent {
     new WishItem('Learn React', true),
     new WishItem('Find a senzu bean'),
   ];
+
+  newWishText = '';
   title = 'wishlist';
+
+  addNewWish() {
+    // Add wish to items array
+    // Clear input field
+  }
 
   toggleItem(item: WishItem) {
     item.isComplete = !item.isComplete;
