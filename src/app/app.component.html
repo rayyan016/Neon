@@ -11,13 +11,23 @@
     </div>
   </form>
 
-  <div *ngIf="items.length === 0; else showItems">
+  <div class="my-4">
+    <div>
+      <select [(ngModel)]="listFilter" (ngModelChange)="filterChanged($event)" class="border border-emerald-600">
+        <option value="0">All</option>
+        <option value="1">Completed</option>
+        <option value="2">Pending</option>
+      </select>
+    </div>
+  </div>
+
+  <div *ngIf="visibleItems.length === 0; else showItems">
     No wishes to display
   </div>
 
   <ng-template #showItems>
     <ul>
-      <li *ngFor="let item of items; index as ii">
+      <li *ngFor="let item of visibleItems; index as ii">
         <div>
           <label for="">
             <input type="checkbox" name="" id="" [checked]="item.isComplete" [attr.data-index]="ii"
