@@ -28,26 +28,5 @@ export class AppComponent {
     new WishItem('Learn React', true),
     new WishItem('Find a senzu bean'),
   ];
-
-  listFilter: String = '0';
-  title = 'wishlist';
-
-  filterChange = (val: any) => {
-    this.listFilter = val;
-  };
-
-  get visibleItems(): WishItem[] {
-    let value = this.listFilter;
-
-    switch (value) {
-      case '0':
-        return this.items;
-      case '1':
-        return this.items.filter((item) => item.isComplete);
-      case '2':
-        return this.items.filter((item) => !item.isComplete);
-      default:
-        return this.items;
-    }
-  }
+  filter: any;
 }
