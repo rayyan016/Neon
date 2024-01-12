@@ -15,6 +15,5 @@ export class WishListComponent {
 
   toggleItem(item: WishItem) {
     item.isComplete = !item.isComplete;
-    console.log(item);
   }
 }
