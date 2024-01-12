@@ -32,9 +32,8 @@ export class AppComponent {
   listFilter: String = '0';
   title = 'wishlist';
 
-  filterChange = (e: any) => {
-    console.log(e);
-    this.listFilter = e;
+  filterChange = (val: any) => {
+    this.listFilter = val;
   };
 
   get visibleItems(): WishItem[] {
