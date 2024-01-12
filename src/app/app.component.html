@@ -3,13 +3,7 @@
   <add-wish-form (addWish)="items.push($event)"></add-wish-form>
 
   <div class="my-4">
-    <div>
-      <select [(ngModel)]="listFilter" class="border border-emerald-600">
-        <option value="0">All</option>
-        <option value="1">Completed</option>
-        <option value="2">Pending</option>
-      </select>
-    </div>
+    <wish-filter (filter)="filterChange($event)"></wish-filter>
   </div>
 
   <div>
