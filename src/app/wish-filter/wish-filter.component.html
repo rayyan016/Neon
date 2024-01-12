@@ -1,0 +1,7 @@
+<div>
+    <select [(ngModel)]="listFilter" (ngModelChange)="changeFilter($event)" class="border border-emerald-600">
+        <option value="0">All</option>
+        <option value="1">Completed</option>
+        <option value="2">Pending</option>
+    </select>
+</div>
