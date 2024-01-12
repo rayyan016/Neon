@@ -20,30 +20,27 @@ export class AppComponent {
   ];
 
   listFilter: String = '0';
-  visibleItems: WishItem[] = this.items;
   newWishText = '';
   title = 'wishlist';
+
+  get visibleItems(): WishItem[] {
+    let value = this.listFilter;
+
+    switch (value) {
+      case '0':
+        return this.items;
+      case '1':
+        return this.items.filter((item) => item.isComplete);
+      case '2':
+        return this.items.filter((item) => !item.isComplete);
+      default:
+        return this.items;
+    }
+  }
 
   addNewWish() {
     this.items.push(new WishItem(this.newWishText));
     this.newWishText = '';
-  }
-
-  filterChanged(value: any) {
-    switch (value) {
-      case '0':
-        this.visibleItems = this.items;
-        break;
-      case '1':
-        this.visibleItems = this.items.filter((item) => item.isComplete);
-        break;
-      case '2':
-        this.visibleItems = this.items.filter((item) => !item.isComplete);
-        break;
-      default:
-        this.visibleItems = this.items;
-        break;
-    }
   }
 
   toggleItem(item: WishItem) {
