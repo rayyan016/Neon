@@ -26,7 +26,7 @@ import { WishService } from './wish.service';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  items!: WishItem[];
+  items: WishItem[] = [];
 
   constructor(events: EventService, private wishService: WishService) {
     events.listen('removeWish', (wish: any) => {
