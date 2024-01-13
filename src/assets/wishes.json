@@ -1,0 +1,5 @@
+[
+  { "wishText": "Learn Angular", "isComplete": false },
+  { "wishText": "Learn React", "isComplete": true },
+  { "wishText": "Find a senzu bean", "isComplete": false }
+]
