@@ -1,8 +1,8 @@
 <li class="flex justify-between">
     <div>
         <label for="" [ngClass]="wishTextClass">
-            <input type="checkbox" name="" [checked]="fulfilled" (click)="toggleFulfilled()">
-            {{wishText}}
+            <input type="checkbox" name="" [checked]="wish.isComplete" (click)="toggleFulfilled()">
+            {{wish.wishText}}
         </label>
     </div>
     <div>
