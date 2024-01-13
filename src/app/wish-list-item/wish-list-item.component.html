@@ -1,6 +1,6 @@
 <li>
     <div>
-        <label for="" [ngClass]="fulfilled? 'line-through' : '' ">
+        <label for="" [ngClass]="wishTextClass">
             <input type="checkbox" name="" [checked]="fulfilled" (click)="toggleFulfilled()">
             {{wishText}}
         </label>
