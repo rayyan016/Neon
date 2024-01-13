@@ -27,4 +27,10 @@ export class WishService {
     return this.http.get('assets/wishes.json', options);
   }
 
+  private addWish(wish: WishItem) {
+    let options = this.getStandarOptions();
+    options.headers = options.headers.set('Authorization', 'Bearer token');
+
+    this.http.post('assets/wishes.json', wish, options);
+  }
 }
