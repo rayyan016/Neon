@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { WishItem } from '../../shared/models/wishItems';
 
-import events from './../../shared/services/EventService';
+import { EventService } from './../../shared/services/EventService';
 
 @Component({
   selector: 'wish-list-item',
@@ -13,6 +13,9 @@ import events from './../../shared/services/EventService';
   styleUrl: './wish-list-item.component.css',
 })
 export class WishListItemComponent {
+
+  constructor(private events : EventService) {}
+
   @Input() wish!: WishItem;
 
   get wishTextClass() {
@@ -20,7 +23,7 @@ export class WishListItemComponent {
   }
 
   removeWish() {
-    events.emit('removeWish', this.wish);
+    this.events.emit('removeWish', this.wish);
   }
 
   toggleFulfilled() {

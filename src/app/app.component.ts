@@ -8,7 +8,7 @@ import { WishListComponent } from './wish-list/wish-list.component';
 import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
 import { WishFilterComponent } from './wish-filter/wish-filter.component';
 
-import events from './../shared/services/EventService';
+import { EventService } from './../shared/services/EventService';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +31,7 @@ export class AppComponent {
     new WishItem('Find a senzu bean'),
   ];
 
-  constructor() {
+  constructor(events: EventService) {
     events.listen('removeWish', (wish: any) => {
 
       const index = this.items.indexOf(wish);
