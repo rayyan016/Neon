@@ -1,8 +1,11 @@
-<li>
+<li class="flex justify-between">
     <div>
         <label for="" [ngClass]="wishTextClass">
             <input type="checkbox" name="" [checked]="fulfilled" (click)="toggleFulfilled()">
             {{wishText}}
         </label>
+    </div>
+    <div>
+        <button class="hover:bg-slate-200 px-2 py-1" (click)="removeWish()">X</button>
     </div>
 </li>
