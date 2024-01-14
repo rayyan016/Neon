@@ -1,1 +1,21 @@
-<p>contact works!</p>
+<div class="w-full h-svh grid place-content-center">
+    <form class="flex flex-col space-y-6">
+        <div class="flex justify-between">
+            <label for="">Your Name</label>
+            <input class="border border-purple-500" type="text" [formControl]="senderNameControl">
+        </div>
+        <div class="flex justify-between space-x-4">
+            <label for="">Your email address</label>
+            <input class="border border-purple-500" type="email" [formControl]="senderEmailControl">
+        </div>
+        <div class="flex justify-between">
+            <label for="">Message</label>
+            <textarea class="border border-purple-500" name="" id="" rows="3"
+                [formControl]="senderMessageControl"></textarea>
+        </div>
+        <div>
+            <button class="border border-purple-500 bg-blue-500 hover:bg-blue-600 text-white px-3 w-full"
+                type="submit" (click)="$event.preventDefault(); submitForm()">Send Message</button>
+        </div>
+    </form>
+</div>
