@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 
 import { WishModule } from './wish/wish.module';
 import { WishItem } from '../shared/models/wishItems';
@@ -12,12 +9,7 @@ import { WishService } from './wish/wish.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    FormsModule,
-    WishModule
-  ],
+  imports: [WishModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

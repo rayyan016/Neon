@@ -16,7 +16,7 @@ const filters = [
   templateUrl: './wish-filter.component.html',
   styleUrl: './wish-filter.component.css',
 })
-export class WishFilterComponent {
+export class WishFilterComponent implements OnInit {
   @Input() filter: any;
   @Output() filterChange = new EventEmitter<any>();
 
