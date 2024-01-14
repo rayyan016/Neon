@@ -1,3 +1,10 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { WishComponent } from './wish/wish.component';
+import { ContactComponent } from './contact/contact.component';
+
+export const routes: Routes = [
+  { path: '', component: WishComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: '**', component: WishComponent },
+];
