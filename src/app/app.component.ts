@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { WishModule } from './wish/wish.module';
 import { WishItem } from '../shared/models/wishItems';
-import { WishListComponent } from './wish-list/wish-list.component';
-import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
-import { WishFilterComponent } from './wish-filter/wish-filter.component';
 
 import { EventService } from './../shared/services/EventService';
-import { WishService } from './wish.service';
+import { WishService } from './wish/wish.service';
 
 @Component({
   selector: 'app-root',
@@ -18,9 +16,7 @@ import { WishService } from './wish.service';
     CommonModule,
     RouterOutlet,
     FormsModule,
-    WishListComponent,
-    AddWishFormComponent,
-    WishFilterComponent,
+    WishModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
