@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 
-import { WishItem } from '../shared/models/wishItems';
+import { WishItem } from '../../shared/models/wishItems';
 
 @Injectable({
   providedIn: 'root',
@@ -32,7 +32,7 @@ export class WishService {
     });
 
     return this.http
-      .get('assets/wisshes.json', options)
+      .get('assets/wishes.json', options)
       .pipe(catchError(this.handleError));
   }
 
