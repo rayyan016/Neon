@@ -2,7 +2,15 @@
     <form class="flex flex-col space-y-6" [formGroup]="contactForm" (ngSubmit)="$event.preventDefault(); submitForm()">
         <div class="flex justify-between">
             <label for="">Your Name</label>
-            <input class="border border-purple-500" type="text" formControlName="senderName">
+            <div>
+                <input class="border border-purple-500" type="text" formControlName="senderName">
+                <div
+                    *ngIf="contactForm.get('senderName')?.invalid && (contactForm.get('senderName')?.dirty) || contactForm.get('senderName')?.touched">
+                    <small class="text-red-600" *ngIf="contactForm.get('senderName')?.hasError('required')">
+                        This field is required
+                    </small>
+                </div>
+            </div>
         </div>
         <div class="flex justify-between space-x-4">
             <label for="">Your email address</label>
