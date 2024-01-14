@@ -1,22 +1,34 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { createInvalidDomainValidator } from './invalidEmailDomain';
+
+const invalidEmailDomain = createInvalidDomainValidator(['gmail.com', 'hotmail.com']);
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
-  senderNameControl = new FormControl();
-  senderEmailControl = new FormControl();
-  senderMessageControl = new FormControl();
+  contactForm = new FormGroup({
+    senderName: new FormControl('', Validators.required),
+    senderEmail: new FormControl('', [
+      Validators.required,
+      Validators.email,
+      invalidEmailDomain,
+    ]),
+    senderMessage: new FormControl('', [
+      Validators.required,
+      Validators.minLength(10),
+    ]),
+  });
 
   submitForm() {
-    if (this.senderNameControl.dirty) {
-      console.log('Change');
-    }
+    console.log(this.contactForm.valid);
   }
 }
