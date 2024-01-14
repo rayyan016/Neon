@@ -6,7 +6,18 @@
         </div>
         <div class="flex justify-between space-x-4">
             <label for="">Your email address</label>
-            <input class="border border-purple-500" type="email" formControlName="senderEmail">
+            <div>
+                <input class="border border-purple-500" type="email" formControlName="senderEmail">
+                <div
+                    *ngIf="contactForm.get('senderEmail')?.invalid && (contactForm.get('senderEmail')?.dirty) || contactForm.get('senderEmail')?.touched">
+                    <small class="text-red-500" *ngIf="contactForm.get('senderEmail')?.hasError('required')">
+                        This field is required
+                    </small>
+                    <small class="text-red-500" *ngIf="contactForm.get('senderEmail')?.hasError('email')">
+                        Enter a valid email address
+                    </small>
+                </div>
+            </div>
         </div>
         <div class="flex justify-between">
             <label for="">Message</label>
@@ -14,8 +25,8 @@
                 formControlName="senderMessage"></textarea>
         </div>
         <div>
-            <button class="border border-purple-500 bg-blue-500 hover:bg-blue-600 text-white px-3 w-full"
-                type="submit">Send Message</button>
+            <button class="border border-purple-500 bg-blue-500 hover:bg-blue-600 text-white px-3 w-full" type="submit"
+                [disabled]="contactForm.invalid">Send Message</button>
         </div>
     </form>
 </div>
