@@ -1,10 +1,8 @@
-<form action="" class="flex gap-x-2">
+<form action="" class="flex gap-x-2 font-mono">
     <div class="flex gap-x-4">
-        <label for="wishText">Wish</label>
-        <input type="text" name="new-wish-text" [(ngModel)]="newWishText" class="border border-emerald-600">
+        <input type="text" name="new-wish-text" [(ngModel)]="newWishText" placeholder="Wish" class="bg-blue-50 mr-6 px-2">
     </div>
     <div>
-        <button class="border border-emerald-600 bg-slate-200 hover:bg-slate-300 p-2" type="submit"
-            (click)="$event.preventDefault; addNewWish()">Add Wish</button>
+        <button class="p-1 hover:text-gray-600" type="submit" (click)="$event.preventDefault; addNewWish()">Add Wish</button>
     </div>
 </form>
