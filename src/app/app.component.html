@@ -1,24 +1,16 @@
 <div
-    class="flex justify-between px-4 py-2 bg-white bg-opacity-30 backdrop-filter backdrop-blur-2xl dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
-    <div class="font-mono text-2xl grid place-content-center ml-4">
+    class="flex justify-between px-4 py-3 bg-white bg-opacity-30 backdrop-filter backdrop-blur-2xl dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <button (click)="goToWish()" class="font-mono text-2xl grid place-content-center ml-4">
         Wishlist
-    </div>
+    </button>
 
-    <div class="text-blue-500">
-        <button (click)="goToWish()"
-            class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
-            <span
-                class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                Wishes
-            </span>
+    <div class="flex space-x-4 mr-4 text-lg font-mono">
+        <button (click)="goToWish()" class="hover:text-blue-800">
+            Wishes
         </button>
 
-        <button (click)="goToContact()"
-            class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-            <span
-                class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                Contact
-            </span>
+        <button (click)="goToContact()" class="hover:text-blue-800">
+            Contact
         </button>
     </div>
 </div>
