@@ -1,13 +1,13 @@
-<div class="grid place-content-center h-svh bg-gradient-to-r from-blue-100 to-blue-300">
+<div class="grid place-content-center h-svh font-mono font-semibold text-lg bg-gradient-to-r from-blue-100 to-blue-300">
     <div
-        class="min-h-80 md:w-96 flex flex-col items-center justify-around bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg border border-gray-200 p-4 rounded-md shadow-md">
+        class="min-h-96 flex flex-col items-center justify-around px-9 bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg border border-gray-200 p-4 rounded-md shadow-md">
         <form class="flex flex-col space-y-6" [formGroup]="contactForm"
             (ngSubmit)="$event.preventDefault(); submitForm()">
             <div class="flex justify-between">
                 <label for="">Name:</label>
                 <div>
                     <input class="bg-blue-50" type="text" formControlName="senderName">
-                    <div
+                    <div class="-mb-3"
                         *ngIf="contactForm.get('senderName')?.invalid && (contactForm.get('senderName')?.dirty) || contactForm.get('senderName')?.touched">
                         <small class="text-red-600" *ngIf="contactForm.get('senderName')?.hasError('required')">
                             This field is required
@@ -19,7 +19,7 @@
                 <label for="">Email address:</label>
                 <div>
                     <input class="bg-blue-50" type="email" formControlName="senderEmail">
-                    <div
+                    <div class="-mb-3"
                         *ngIf="contactForm.get('senderEmail')?.invalid && (contactForm.get('senderEmail')?.dirty) || contactForm.get('senderEmail')?.touched">
                         <small class="text-red-600" *ngIf="contactForm.get('senderEmail')?.hasError('required')">
                             This field is required
@@ -37,9 +37,9 @@
             <div class="flex justify-between">
                 <label for="">Message:</label>
                 <div>
-                    <textarea class="bg-blue-50" name="" id="" rows="3" cols="22"
-                        formControlName="senderMessage"></textarea>
-                    <div
+                    <input class="bg-blue-50" name="" id="" rows="1" 
+                        formControlName="senderMessage" />
+                    <div class="-mb-3"
                         *ngIf="contactForm.get('senderMessage')?.invalid && (contactForm.get('senderMessage')?.dirty) || contactForm.get('senderMessage')?.touched">
                         <small class="text-red-600" *ngIf="contactForm.get('senderMessage')?.hasError('required')">
                             This field is required
