@@ -19,7 +19,7 @@ export class WishListItemComponent {
   @Input() wish!: WishItem;
 
   get wishTextClass() {
-    return this.wish.isComplete ? ['line-through', 'text-emerald-400'] : [];
+    return this.wish.isComplete ? ['line-through', 'text-emerald-700'] : [];
   }
 
   removeWish() {

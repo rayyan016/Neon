@@ -1,4 +1,4 @@
-<li class="flex justify-between font-mono">
+<li class="flex justify-between font-mono text-lg">
     <div>
         <label for="" [ngClass]="wishTextClass">
             <input type="checkbox" name="" [checked]="wish.isComplete" (click)="toggleFulfilled()">
@@ -6,6 +6,6 @@
         </label>
     </div>
     <div>
-        <button class="hover:bg-slate-200 px-2 py-1" (click)="removeWish()">X</button>
+        <button class="text-red-600 hover:text-red-400" (click)="removeWish()">X</button>
     </div>
 </li>
