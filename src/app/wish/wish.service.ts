@@ -31,9 +31,11 @@ export class WishService {
       },
     });
 
-    return this.http
-      .get('assets/wishes.json', options)
-      .pipe(catchError(this.handleError));
+    // return this.http
+    //   .get('assets/wishes.json', options)
+    //   .pipe(catchError(this.handleError));
+
+    return JSON.parse(localStorage.getItem('wishlist') || '[]');
   }
 
   private handleError(error: HttpErrorResponse) {

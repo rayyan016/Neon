@@ -27,19 +27,21 @@ export class WishComponent {
   }
 
   ngOnInit(): void {
-    this.wishService.getWishes().subscribe(
-      (data: any) => {
-        this.items = data;
-      },
-      (error: any) => {
-        alert(error.message);
-      }
-    );
+    this.items = this.wishService.getWishes();
+
+    // .subscribe(
+    // (data: any) => {
+    //   this.items = data;
+    // },
+    // (error: any) => {
+    //   alert(error.message);
+    // }
+    // );
   }
 
   filter: any;
 
-  addWish(wish: WishItem) : void {
+  addWish(wish: WishItem): void {
     this.items.push(wish);
     const wishlistJson = JSON.stringify(this.items);
     localStorage.setItem('wishlist', wishlistJson);
