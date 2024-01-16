@@ -23,6 +23,7 @@ export class WishComponent {
     events.listen('removeWish', (wish: any) => {
       const index = this.items.indexOf(wish);
       this.items.splice(index, 1);
+      this.saveWishlistToLocalStorage();
     });
   }
 
@@ -43,7 +44,14 @@ export class WishComponent {
 
   addWish(wish: WishItem): void {
     this.items.push(wish);
+    this.saveWishlistToLocalStorage();
+  }
+
+  private saveWishlistToLocalStorage() : void {
+    // Convert the array to a JSON string
     const wishlistJson = JSON.stringify(this.items);
+
+    // Save the JSON string to local storage
     localStorage.setItem('wishlist', wishlistJson);
   }
 }
