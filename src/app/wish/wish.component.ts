@@ -39,7 +39,7 @@ export class WishComponent {
 
   filter: any;
 
-  addWish(wish: WishItem) {
+  addWish(wish: WishItem) : void {
     this.items.push(wish);
     const wishlistJson = JSON.stringify(this.items);
     localStorage.setItem('wishlist', wishlistJson);
