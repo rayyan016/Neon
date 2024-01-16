@@ -38,4 +38,10 @@ export class WishComponent {
   }
 
   filter: any;
+
+  addWish(wish: WishItem) {
+    this.items.push(wish);
+    const wishlistJson = JSON.stringify(this.items);
+    localStorage.setItem('wishlist', wishlistJson);
+  }
 }
