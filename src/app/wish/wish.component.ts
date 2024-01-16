@@ -29,15 +29,16 @@ export class WishComponent {
 
   ngOnInit(): void {
     this.items = this.wishService.getWishes();
-
-    // .subscribe(
-    // (data: any) => {
-    //   this.items = data;
-    // },
-    // (error: any) => {
-    //   alert(error.message);
-    // }
-    // );
+    if (this.items.length === 0) {
+      this.wishService.getWishesFromJson().subscribe(
+        (data: any) => {
+          this.items = data;
+        },
+        (error: any) => {
+          alert(error.message);
+        }
+      );
+    }
   }
 
   filter: any;
@@ -47,7 +48,7 @@ export class WishComponent {
     this.saveWishlistToLocalStorage();
   }
 
-  private saveWishlistToLocalStorage() : void {
+  private saveWishlistToLocalStorage(): void {
     // Convert the array to a JSON string
     const wishlistJson = JSON.stringify(this.items);
 

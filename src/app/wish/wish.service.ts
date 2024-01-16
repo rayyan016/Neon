@@ -24,6 +24,10 @@ export class WishService {
   }
 
   getWishes() {
+    return JSON.parse(localStorage.getItem('wishlist') || '[]');
+  }
+
+  getWishesFromJson() {
     let options = this.getStandarOptions();
     options.params = new HttpParams({
       fromObject: {
@@ -31,11 +35,9 @@ export class WishService {
       },
     });
 
-    // return this.http
-    //   .get('assets/wishes.json', options)
-    //   .pipe(catchError(this.handleError));
-
-    return JSON.parse(localStorage.getItem('wishlist') || '[]');
+    return this.http
+      .get('assets/wishes.json', options)
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {
