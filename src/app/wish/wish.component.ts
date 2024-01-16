@@ -44,6 +44,9 @@ export class WishComponent {
   filter: any;
 
   addWish(wish: WishItem): void {
+    if (!wish.wishText) {
+      return;
+    }
     this.items.push(wish);
     this.saveWishlistToLocalStorage();
   }
