@@ -1,5 +1,5 @@
 [
-  { "wishText": "Learn Angular", "isComplete": false },
-  { "wishText": "Learn React", "isComplete": true },
+  { "wishText": "Catch Charizard", "isComplete": false },
+  { "wishText": "Find Dragon Balls", "isComplete": true },
   { "wishText": "Find a senzu bean", "isComplete": false }
 ]
