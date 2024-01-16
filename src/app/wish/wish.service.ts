@@ -24,6 +24,10 @@ export class WishService {
   }
 
   getWishes() {
+    return JSON.parse(localStorage.getItem('wishlist') || '[]');
+  }
+
+  getWishesFromJson() {
     let options = this.getStandarOptions();
     options.params = new HttpParams({
       fromObject: {

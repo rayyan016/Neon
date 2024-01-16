@@ -23,19 +23,39 @@ export class WishComponent {
     events.listen('removeWish', (wish: any) => {
       const index = this.items.indexOf(wish);
       this.items.splice(index, 1);
+      this.saveWishlistToLocalStorage();
     });
   }
 
   ngOnInit(): void {
-    this.wishService.getWishes().subscribe(
-      (data: any) => {
-        this.items = data;
-      },
-      (error: any) => {
-        alert(error.message);
-      }
-    );
+    this.items = this.wishService.getWishes();
+    if (this.items.length === 0) {
+      this.wishService.getWishesFromJson().subscribe(
+        (data: any) => {
+          this.items = data;
+        },
+        (error: any) => {
+          alert(error.message);
+        }
+      );
+    }
   }
 
   filter: any;
+
+  addWish(wish: WishItem): void {
+    if (!wish.wishText) {
+      return;
+    }
+    this.items.push(wish);
+    this.saveWishlistToLocalStorage();
+  }
+
+  private saveWishlistToLocalStorage(): void {
+    // Convert the array to a JSON string
+    const wishlistJson = JSON.stringify(this.items);
+
+    // Save the JSON string to local storage
+    localStorage.setItem('wishlist', wishlistJson);
+  }
 }
